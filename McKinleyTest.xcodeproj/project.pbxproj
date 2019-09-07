@@ -19,6 +19,7 @@
 		D9DBD31D2323E64800D99412 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DBD31C2323E64800D99412 /* WebKit.framework */; };
 		D9DBD31F2323E75300D99412 /* UIButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBD31E2323E75300D99412 /* UIButtonHelper.swift */; };
 		D9DBD3222323E7A800D99412 /* UIViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBD3212323E7A800D99412 /* UIViewControllerHelper.swift */; };
+		D9DBD3242323EB4A00D99412 /* AppLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBD3232323EB4A00D99412 /* AppLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		D9DBD31C2323E64800D99412 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		D9DBD31E2323E75300D99412 /* UIButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonHelper.swift; sourceTree = "<group>"; };
 		D9DBD3212323E7A800D99412 /* UIViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerHelper.swift; sourceTree = "<group>"; };
+		D9DBD3232323EB4A00D99412 /* AppLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				D9DBD31E2323E75300D99412 /* UIButtonHelper.swift */,
 				D9DBD3212323E7A800D99412 /* UIViewControllerHelper.swift */,
+				D9DBD3232323EB4A00D99412 /* AppLoader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				D9DBD3022323D5CB00D99412 /* ViewController.swift in Sources */,
 				D9DBD3222323E7A800D99412 /* UIViewControllerHelper.swift in Sources */,
 				D9DBD3142323DD7200D99412 /* WebviewController.swift in Sources */,
+				D9DBD3242323EB4A00D99412 /* AppLoader.swift in Sources */,
 				D9DBD31F2323E75300D99412 /* UIButtonHelper.swift in Sources */,
 				D9DBD3002323D5CB00D99412 /* AppDelegate.swift in Sources */,
 			);
