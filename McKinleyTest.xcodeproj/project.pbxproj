@@ -20,6 +20,7 @@
 		D9DBD31F2323E75300D99412 /* UIButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBD31E2323E75300D99412 /* UIButtonHelper.swift */; };
 		D9DBD3222323E7A800D99412 /* UIViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBD3212323E7A800D99412 /* UIViewControllerHelper.swift */; };
 		D9DBD3242323EB4A00D99412 /* AppLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBD3232323EB4A00D99412 /* AppLoader.swift */; };
+		D9DBD3262323EDE000D99412 /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBD3252323EDE000D99412 /* Validate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D9DBD31E2323E75300D99412 /* UIButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonHelper.swift; sourceTree = "<group>"; };
 		D9DBD3212323E7A800D99412 /* UIViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerHelper.swift; sourceTree = "<group>"; };
 		D9DBD3232323EB4A00D99412 /* AppLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoader.swift; sourceTree = "<group>"; };
+		D9DBD3252323EDE000D99412 /* Validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				D9DBD31E2323E75300D99412 /* UIButtonHelper.swift */,
 				D9DBD3212323E7A800D99412 /* UIViewControllerHelper.swift */,
 				D9DBD3232323EB4A00D99412 /* AppLoader.swift */,
+				D9DBD3252323EDE000D99412 /* Validate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				D9DBD31A2323DEB500D99412 /* ApiList.swift in Sources */,
 				D9DBD3162323DE1D00D99412 /* LoginViewModel.swift in Sources */,
 				D9DBD3182323DE2A00D99412 /* ApiService.swift in Sources */,
+				D9DBD3262323EDE000D99412 /* Validate.swift in Sources */,
 				D9DBD3022323D5CB00D99412 /* ViewController.swift in Sources */,
 				D9DBD3222323E7A800D99412 /* UIViewControllerHelper.swift in Sources */,
 				D9DBD3142323DD7200D99412 /* WebviewController.swift in Sources */,

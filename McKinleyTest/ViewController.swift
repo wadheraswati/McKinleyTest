@@ -26,8 +26,9 @@ class ViewController: UIViewController {
     @IBAction func loginBtnClicked(_ sender : UIButton) {
         self.view.endEditing(true)
         
-        sender.showLoadingIndicator()
-        if let email = emailTF.text, let password = passwordTF.text {
+        if let email = emailTF.text, let password = passwordTF.text, validate() {
+            sender.showLoadingIndicator()
+
             viewModel.login(email, password, completion: { success, errorMsg in
                 DispatchQueue.main.async {
                     sender.hideLoadingIndicator()
@@ -45,6 +46,29 @@ class ViewController: UIViewController {
                 }
             })
         }
+    }
+    
+    func validate() -> Bool {
+        if let text = emailTF.text, !text.isEmpty {
+            do {
+                if try !Validate.Email(text) {
+                    showAlert(withMessage: "Please enter a valid email", title: "Error")
+                    return false
+                }
+            } catch {
+                showAlert(withMessage: "Please enter a valid email", title: "Error")
+                return false
+            }
+        } else {
+            showAlert(withMessage: "Email field cannot be empty", title: "Error")
+            return false
+        }
+        if let text = passwordTF.text, text.isEmpty {
+            showAlert(withMessage: "Password field cannot be empty", title: "Error")
+            return false
+        }
+        
+        return true
     }
     
     // MARK: - Keyboard Notifications -
