@@ -9,7 +9,7 @@
 import UIKit
 
 public enum RequestType : String {
-    case GET
+    case POST
 }
 
 public enum ResponseStatusCode : Int {
@@ -18,23 +18,25 @@ public enum ResponseStatusCode : Int {
 
 public enum AppError: Error {
     case badURL
+    case apiFailure
 }
 
 class ApiService : NSObject {
     
     public typealias completionHandler = ( Result <Any, AppError> ) -> Void
     
-    class func get(url : String, completion : @escaping completionHandler)
+    class func post(url : String, parameters: [String : Any], completion : @escaping completionHandler)
     {
         guard let urlString = URL(string : url) else {
             completion(.failure(.badURL))
             return
         }
         
-        print("GET API Called - \(url)")
+        print("POST API Called - \(url)")
         
         var request = URLRequest(url: urlString)
-        request.httpMethod = RequestType.GET.rawValue
+        request.httpMethod = RequestType.POST.rawValue
+        request.httpBody = try! JSONSerialization.data(withJSONObject: parameters, options: [])
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let session = URLSession.shared
@@ -42,16 +44,20 @@ class ApiService : NSObject {
             
             do {
                 if error == nil {
-                    let json = try JSONSerialization.jsonObject(with: data!)
-                    print("GET API - \(url) Response - \(json)")
-                    completion(.success(json))
+                    if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == ResponseStatusCode.Success.rawValue {
+                        let json = try JSONSerialization.jsonObject(with: data!)
+                        print("POST API - \(url) Response - \(json)")
+                        completion(.success(json))
+                    } else {
+                        completion(.failure(.apiFailure))
+                    }
                 } else {
-                    print("GET API - \(url) Error - \(error?.localizedDescription ?? "")")
-                    completion(.failure(.badURL))
+                    print("POST API - \(url) Error - \(error?.localizedDescription ?? "")")
+                    completion(.failure(.apiFailure))
                 }
             } catch {
                 print("error")
-                completion(.failure(.badURL))
+                completion(.failure(.apiFailure))
             }
         })
         
