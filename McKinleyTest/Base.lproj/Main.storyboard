@@ -44,7 +44,7 @@
                                 <rect key="frame" x="10" y="202" width="394" height="640"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="AbX-gg-72x">
-                                        <rect key="frame" x="0.0" y="230" width="394" height="180"/>
+                                        <rect key="frame" x="0.0" y="100" width="394" height="180"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="eve.holt@reqres.in" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rAU-dL-9G9">
                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
@@ -92,10 +92,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="AbX-gg-72x" firstAttribute="top" secondItem="uPP-6X-TnL" secondAttribute="top" constant="100" id="BV2-EU-GEY"/>
                                     <constraint firstAttribute="trailing" secondItem="AbX-gg-72x" secondAttribute="trailing" id="e0h-No-wSr"/>
                                     <constraint firstItem="AbX-gg-72x" firstAttribute="width" secondItem="uPP-6X-TnL" secondAttribute="width" id="juz-Mv-9o0"/>
                                     <constraint firstItem="AbX-gg-72x" firstAttribute="leading" secondItem="uPP-6X-TnL" secondAttribute="leading" id="l7u-ma-GlZ"/>
-                                    <constraint firstItem="AbX-gg-72x" firstAttribute="centerY" secondItem="uPP-6X-TnL" secondAttribute="centerY" id="vTg-xt-fRI"/>
                                 </constraints>
                             </view>
                         </subviews>
