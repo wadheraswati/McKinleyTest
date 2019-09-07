@@ -21,6 +21,7 @@
 		D9DBD3222323E7A800D99412 /* UIViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBD3212323E7A800D99412 /* UIViewControllerHelper.swift */; };
 		D9DBD3242323EB4A00D99412 /* AppLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBD3232323EB4A00D99412 /* AppLoader.swift */; };
 		D9DBD3262323EDE000D99412 /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBD3252323EDE000D99412 /* Validate.swift */; };
+		D9DBD3282323F2EE00D99412 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBD3272323F2EE00D99412 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		D9DBD3212323E7A800D99412 /* UIViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerHelper.swift; sourceTree = "<group>"; };
 		D9DBD3232323EB4A00D99412 /* AppLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoader.swift; sourceTree = "<group>"; };
 		D9DBD3252323EDE000D99412 /* Validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validate.swift; sourceTree = "<group>"; };
+		D9DBD3272323F2EE00D99412 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				D9DBD3212323E7A800D99412 /* UIViewControllerHelper.swift */,
 				D9DBD3232323EB4A00D99412 /* AppLoader.swift */,
 				D9DBD3252323EDE000D99412 /* Validate.swift */,
+				D9DBD3272323F2EE00D99412 /* CustomTextField.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9DBD31A2323DEB500D99412 /* ApiList.swift in Sources */,
+				D9DBD3282323F2EE00D99412 /* CustomTextField.swift in Sources */,
 				D9DBD3162323DE1D00D99412 /* LoginViewModel.swift in Sources */,
 				D9DBD3182323DE2A00D99412 /* ApiService.swift in Sources */,
 				D9DBD3262323EDE000D99412 /* Validate.swift in Sources */,
