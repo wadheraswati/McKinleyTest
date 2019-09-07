@@ -12,7 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var emailTF : UITextField!
     @IBOutlet weak var passwordTF : UITextField!
-    
+    @IBOutlet weak var fieldView : UIView!
+    @IBOutlet weak var topConstraint : NSLayoutConstraint!
     let viewModel = LoginViewModel()
     
     override func viewDidLoad() {
@@ -78,16 +79,18 @@ class ViewController: UIViewController {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
-//            contactDetailTVBottomConstraint.constant = -(keyboardHeight)
-//            contactDetailTV.updateConstraintsIfNeeded()
+            UIView.animate(withDuration: 0.5, animations: {
+                self.topConstraint.constant = -keyboardHeight
+            })
         }
     }
     
     @objc func keyboardWillHide(_ notification : NSNotification) {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-//        contactDetailTVBottomConstraint.constant = 0
-//        contactDetailTV.updateConstraintsIfNeeded()
+        UIView.animate(withDuration: 0.5, animations: {
+            self.topConstraint.constant = 0
+        })
     }
 }
 
@@ -111,10 +114,6 @@ extension TextField : UITextFieldDelegate {
         }
         
         return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
     }
 }
 
