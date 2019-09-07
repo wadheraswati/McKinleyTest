@@ -21,15 +21,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginBtnClicked(_ sender : UIButton) {
-        
+        sender.showLoadingIndicator()
         if let email = emailTF.text, let password = passwordTF.text {
             viewModel.login(email, password, completion: { success, errorMsg in
+                DispatchQueue.main.async {
+                    sender.hideLoadingIndicator()
+                }
+                
                 if success {
                     DispatchQueue.main.async {
+                        sender.hideLoadingIndicator()
                         self.performSegue(withIdentifier: "showWebview", sender: nil)
                     }
                 } else {
-                    
+                    if let error = errorMsg {
+                        self.showAlert(withMessage: error, title: "Error")
+                    }
                 }
             })
         }

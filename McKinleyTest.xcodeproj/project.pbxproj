@@ -17,6 +17,8 @@
 		D9DBD3182323DE2A00D99412 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBD3172323DE2A00D99412 /* ApiService.swift */; };
 		D9DBD31A2323DEB500D99412 /* ApiList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBD3192323DEB500D99412 /* ApiList.swift */; };
 		D9DBD31D2323E64800D99412 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DBD31C2323E64800D99412 /* WebKit.framework */; };
+		D9DBD31F2323E75300D99412 /* UIButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBD31E2323E75300D99412 /* UIButtonHelper.swift */; };
+		D9DBD3222323E7A800D99412 /* UIViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBD3212323E7A800D99412 /* UIViewControllerHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		D9DBD3172323DE2A00D99412 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		D9DBD3192323DEB500D99412 /* ApiList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiList.swift; sourceTree = "<group>"; };
 		D9DBD31C2323E64800D99412 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D9DBD31E2323E75300D99412 /* UIButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonHelper.swift; sourceTree = "<group>"; };
+		D9DBD3212323E7A800D99412 /* UIViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		D9DBD2FE2323D5CB00D99412 /* McKinleyTest */ = {
 			isa = PBXGroup;
 			children = (
+				D9DBD3202323E79A00D99412 /* Helpers */,
 				D9DBD3122323DD4500D99412 /* ApiService */,
 				D9DBD3112323DD3E00D99412 /* ViewModel */,
 				D9DBD2FF2323D5CB00D99412 /* AppDelegate.swift */,
@@ -102,6 +107,15 @@
 				D9DBD31C2323E64800D99412 /* WebKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9DBD3202323E79A00D99412 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D9DBD31E2323E75300D99412 /* UIButtonHelper.swift */,
+				D9DBD3212323E7A800D99412 /* UIViewControllerHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +193,9 @@
 				D9DBD3162323DE1D00D99412 /* LoginViewModel.swift in Sources */,
 				D9DBD3182323DE2A00D99412 /* ApiService.swift in Sources */,
 				D9DBD3022323D5CB00D99412 /* ViewController.swift in Sources */,
+				D9DBD3222323E7A800D99412 /* UIViewControllerHelper.swift in Sources */,
 				D9DBD3142323DD7200D99412 /* WebviewController.swift in Sources */,
+				D9DBD31F2323E75300D99412 /* UIButtonHelper.swift in Sources */,
 				D9DBD3002323D5CB00D99412 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
