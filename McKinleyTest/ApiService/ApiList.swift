@@ -15,11 +15,18 @@ class ApiList: NSObject {
     static let login = ApiList.baseUrl + "login"
 }
 
-class ApiParams {
+class ApiRequestParams {
     
     struct login {
         static let email = "email"
         static let password = "password"
+    }
+}
+
+class ApiResponseParams {
+    
+    struct login {
+        static let token = "token"
     }
 }
 

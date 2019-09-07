@@ -16,11 +16,13 @@ class WebviewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let myURL = URL(string: "https://google.com")
-        let myRequest = URLRequest(url: myURL!)
-        webview.uiDelegate = self
-        webview.navigationDelegate = self
-        webview.load(myRequest)
+        if let token = UserDefaults.standard.value(forKey: ApiResponseParams.login.token) {
+            let myURL = URL(string: "https://mckinleyrice.com?token=\(token)")
+            let myRequest = URLRequest(url: myURL!)
+            webview.uiDelegate = self
+            webview.navigationDelegate = self
+            webview.load(myRequest)
+        }
         // Do any additional setup after loading the view.
     }
     

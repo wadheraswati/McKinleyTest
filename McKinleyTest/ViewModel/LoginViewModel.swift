@@ -13,15 +13,15 @@ class LoginViewModel: NSObject {
     func login(_ email : String, _ password : String, completion : @escaping (Bool, String?) -> ()) {
         
         let apiUrl = ApiList.login
-        let params :  [String : AnyObject] = [ApiParams.login.email : email as AnyObject, ApiParams.login.password : password as AnyObject]
+        let params :  [String : AnyObject] = [ApiRequestParams.login.email : email as AnyObject, ApiRequestParams.login.password : password as AnyObject]
         
         ApiService.post(url: apiUrl, parameters: params, completion: { result, errorMsg in
             switch result {
                 
             case .success(let response):
                 if let result = response as? NSDictionary {
-                    let token = result.value(forKey: "token")
-                    UserDefaults.standard.setValue(token, forKey: "token")
+                    let token = result.value(forKey: ApiResponseParams.login.token)
+                    UserDefaults.standard.setValue(token, forKey: ApiResponseParams.login.token)
                     UserDefaults.standard.synchronize()
                     completion(true, nil)
                 } else {
