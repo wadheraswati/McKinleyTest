@@ -23,12 +23,12 @@ public enum AppError: Error {
 
 class ApiService : NSObject {
     
-    public typealias completionHandler = ( Result <Any, AppError> ) -> Void
+    public typealias completionHandler = ( Result <Any, AppError>, String? ) -> Void
     
     class func post(url : String, parameters: [String : Any], completion : @escaping completionHandler)
     {
         guard let urlString = URL(string : url) else {
-            completion(.failure(.badURL))
+            completion(.failure(.badURL), nil)
             return
         }
         
@@ -47,17 +47,22 @@ class ApiService : NSObject {
                     if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == ResponseStatusCode.Success.rawValue {
                         let json = try JSONSerialization.jsonObject(with: data!)
                         print("POST API - \(url) Response - \(json)")
-                        completion(.success(json))
+                        completion(.success(json), nil)
                     } else {
-                        completion(.failure(.apiFailure))
+                        if let json = try JSONSerialization.jsonObject(with: data!) as? NSDictionary, let errorText = json.value(forKey: "error") as? String {
+                        print("POST API - \(url) Response - \(json)")
+                            completion(.failure(.apiFailure), errorText )
+                        } else {
+                            completion(.failure(.apiFailure), nil)
+                        }
                     }
                 } else {
                     print("POST API - \(url) Error - \(error?.localizedDescription ?? "")")
-                    completion(.failure(.apiFailure))
+                    completion(.failure(.apiFailure), error?.localizedDescription)
                 }
             } catch {
                 print("error")
-                completion(.failure(.apiFailure))
+                completion(.failure(.apiFailure), error.localizedDescription)
             }
         })
         

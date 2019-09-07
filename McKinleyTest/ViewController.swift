@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginBtnClicked(_ sender : UIButton) {
+        self.view.endEditing(true)
+        
         sender.showLoadingIndicator()
         if let email = emailTF.text, let password = passwordTF.text {
             viewModel.login(email, password, completion: { success, errorMsg in

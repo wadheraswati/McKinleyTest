@@ -15,7 +15,7 @@ class LoginViewModel: NSObject {
         let apiUrl = ApiList.login
         let params :  [String : AnyObject] = [ApiParams.login.email : email as AnyObject, ApiParams.login.password : password as AnyObject]
         
-        ApiService.post(url: apiUrl, parameters: params, completion: { result in
+        ApiService.post(url: apiUrl, parameters: params, completion: { result, errorMsg in
             switch result {
                 
             case .success(let response):
@@ -28,7 +28,11 @@ class LoginViewModel: NSObject {
                     completion(false, nil)
                 }
             case .failure(let error):
-                completion(false, error.localizedDescription)
+                if let errorText = errorMsg {
+                    completion(false, errorText)
+                } else {
+                    completion(false, error.localizedDescription)
+                }
                 print(error.localizedDescription)
             }
         })
