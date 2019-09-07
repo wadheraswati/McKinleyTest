@@ -46,7 +46,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="AbX-gg-72x">
                                         <rect key="frame" x="0.0" y="230" width="394" height="180"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rAU-dL-9G9">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="eve.holt@reqres.in" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rAU-dL-9G9">
                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="8hq-JW-7Oc"/>
@@ -54,9 +54,9 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="email"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tBw-K3-f2O">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="cityslicka" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tBw-K3-f2O">
                                                 <rect key="frame" x="0.0" y="65" width="394" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="5ab-MX-7AJ"/>
@@ -64,7 +64,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyo-g6-B3e">
                                                 <rect key="frame" x="0.0" y="130" width="394" height="50"/>
@@ -77,6 +77,9 @@
                                                 <state key="normal" title="LOGIN">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="loginBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hHG-ni-9T4"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -102,17 +105,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="e4a-aR-cFD" kind="show" id="jLI-jV-Fab"/>
+                        <outlet property="emailTF" destination="rAU-dL-9G9" id="7zQ-Ve-CiQ"/>
+                        <outlet property="passwordTF" destination="tBw-K3-f2O" id="ItN-yR-0WJ"/>
+                        <segue destination="e4a-aR-cFD" kind="show" identifier="showWebview" id="jLI-jV-Fab"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Webview Controller-->
         <scene sceneID="MMB-s6-suj">
             <objects>
-                <viewController id="e4a-aR-cFD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webviewVC" id="e4a-aR-cFD" customClass="WebviewController" customModule="McKinleyTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dpW-tu-Hy4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,6 +135,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="B5L-VE-Anz"/>
                     </view>
+                    <connections>
+                        <outlet property="webview" destination="6sl-wR-OWq" id="LUi-NH-cq1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K54-gp-74S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
